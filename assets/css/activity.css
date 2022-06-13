@@ -1,0 +1,956 @@
+#set_mc {
+  /*padding: 0px 30px 0px 30px;*/
+  width: 100%;
+  position: relative;
+  /*height: 100%;
+  min-height: 500px;*/
+  overflow: auto;
+  /*display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;*/
+  width: max-content;
+  /*top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);*/
+  margin: 0px auto;
+}
+
+.birds_set_mc {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  background-color: #c4f0f7;
+  border: 2px solid var(--theme-pri-color);
+  border-radius: 50%;
+  z-index: 5;
+  left: -18px;
+  top: -12px;
+}
+
+/*
+#eagleSet_mc {
+  left: 40px;
+  top: 40px;
+}
+#hornbillSet_mc {
+  left: 40px;
+  top: 140px;
+}
+#owlSet_mc {
+  left: 40px;
+  top: 240px;
+}
+#parrotSet_mc {
+  left: 40px;
+  top: 340px;
+}
+#pelicanSet_mc {
+  left: 40px;
+  top: 440px;
+}
+*/
+
+.eaglePix_sym {
+  width: 65px;
+  height: 85px;
+  background-image: url(../images/birds/eagle.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -25px;
+  left: 0px;
+}
+
+.hornbillPix_sym {
+  width: 70px;
+  height: 100px;
+  background-image: url(../images/birds/hornbill.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -25px;
+}
+
+.woodpeckerPix_sym {
+  width: 50px;
+  height: 90px;
+  background-image: url(../images/birds/woodpecker.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -15px;
+  left: 6px;
+}
+
+.swanPix_sym {
+  width: 75px;
+  height: 85px;
+  background-image: url(../images/birds/swan.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -25px;
+  left: 5px;
+}
+
+.sparrowPix_sym {
+  width: 75px;
+  height: 71px;
+  background-image: url(../images/birds/sparrow.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: -10px;
+  left: -15px;
+}
+
+.robinPix_sym {
+  width: 75px;
+  height: 70px;
+  background-image: url(../images/birds/robin.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -10px;
+  left: -15px;
+}
+
+.pigeonPix_sym {
+  width: 85px;
+  height: 75px;
+  background-image: url(../images/birds/pigeon.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -15px;
+  left: -15px;
+}
+
+.pelicanPix_sym {
+  width: 80px;
+  height: 80px;
+  background-image: url(../images/birds/pelican.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -20px;
+  left: -10px;
+}
+
+.parrotPix_sym {
+  width: 60px;
+  height: 100px;
+  background-image: url(../images/birds/parrot.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -20px;
+  left: -1px;
+}
+
+.owlPix_sym {
+  width: 65px;
+  height: 80px;
+  background-image: url(../images/birds/owl.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -20px;
+  left: -10px;
+}
+
+.birds_set_mc_txt {
+  /* width: 350px; */
+  height: 48px;
+  padding: 10px 20px 10px 60px;
+  /*overflow: hidden;*/
+  background-color: #fff;
+  border: 2px solid var(--theme-pri-color);
+  border-radius: 5px;
+  position: relative;
+  /*font-weight: bold;*/
+  margin: 45px 30px;
+}
+
+/*Quiz div*/
+.instruction_cont {
+  background-color: #fff;
+  padding: 20px;
+  height: auto;
+  width: 100%;
+}
+
+.instruction_cont .title_txt {
+  color: #545454;
+  /*font-weight: bold;*/
+}
+
+.instruction_cont .instruction_txt {
+  color: #a6162c;
+  /*font-weight: bold;*/
+  font-style: italic;
+}
+
+.quiz_cont {
+  background-color: #f2f2f2;
+  padding: 0px 30px;
+  height: auto;
+  width: 100%;
+  /*top: 50%;
+  left: 50%;
+  transform: translate(-50%, -65%);*/
+  position: relative;
+}
+
+.quiz_cont_inner {
+  position: relative;
+  width: 100%;
+  /*height: 290px;*/
+  padding: 20px 0px 10px 0px;
+}
+
+.config_cont {
+  margin-bottom: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.config_cont .btn_minus,
+.config_cont .btn_plus {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  color: #fff;
+  background-color: var(--theme-pri-color);
+  color: var(--theme-pri-text-color);
+  position: relative;
+  float: left;
+}
+
+.config_cont .btn_minus span,
+.config_cont .btn_plus span {
+  font-size: 40px;
+  line-height: 0;
+  text-align: center;
+  position: absolute;
+  left: 5px;
+  top: 17px;
+}
+
+.config_cont .btn_plus {
+  float: right;
+}
+
+.config_cont button:focus {
+  box-shadow: none;
+}
+
+.config_cont input {
+  text-align: center;
+  width: 100px;
+  outline: none;
+  /*color: inherit;*/
+  padding: 4px;
+  margin: 1px 5px;
+  border: 1px solid var(--theme-pri-color);
+  border-radius: 4px;
+  max-width: 80px;
+}
+
+.cmb_cont {
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.score_cont {
+  border: 2px solid #4b4b4b;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: fit-content;
+  height: 35px;
+  /* background-color: #4b4b4b; */
+  position: relative;
+  background: rgb(75, 75, 75);
+  background: -moz-linear-gradient(-25deg,
+      rgba(75, 75, 75, 1) 0%,
+      rgba(75, 75, 75, 1) 80%,
+      rgba(255, 255, 255, 1) 80%,
+      rgba(255, 255, 255, 1) 100%);
+  background: -webkit-linear-gradient(-25deg,
+      rgba(75, 75, 75, 1) 0%,
+      rgba(75, 75, 75, 1) 80%,
+      rgba(255, 255, 255, 1) 80%,
+      rgba(255, 255, 255, 1) 100%);
+  background: linear-gradient(90deg,
+      rgba(75, 75, 75, 1) 0%,
+      rgba(75, 75, 75, 1) 50%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4b4b4b', endColorstr='#ffffff', GradientType=1);
+}
+
+.score_cont .score_title {
+  color: #fff;
+  /*font-weight: bold;*/
+  float: left;
+  width: 80px;
+  padding: 4px 0px 0px 8px;
+  height: 32px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  background: rgb(75, 75, 75);
+  /* Old browsers */
+  background: -moz-linear-gradient(-25deg,
+      rgba(75, 75, 75, 1) 0%,
+      rgba(75, 75, 75, 1) 80%,
+      rgba(255, 255, 255, 1) 80%,
+      rgba(255, 255, 255, 1) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-25deg,
+      rgba(75, 75, 75, 1) 0%,
+      rgba(75, 75, 75, 1) 80%,
+      rgba(255, 255, 255, 1) 80%,
+      rgba(255, 255, 255, 1) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(115deg,
+      rgba(75, 75, 75, 1) 0%,
+      rgba(75, 75, 75, 1) 80%,
+      rgba(255, 255, 255, 1) 80%,
+      rgba(255, 255, 255, 1) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4b4b4b', endColorstr='#ffffff', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+}
+
+.score_cont .score_txt {
+  color: #4b4b4b;
+  font-weight: bold;
+  float: left;
+  width: auto;
+  padding: 4px 10px 4px 0px;
+  position: relative;
+  min-width: 50px;
+  background-color: #fff;
+  border-top-right-radius: 5px;
+}
+
+.ques_cont {
+  width: 100%;
+  /*height: 100px;*/
+  position: relative;
+}
+
+.ques_content {
+  float: left;
+  width: 58%;
+  /*height: 97px;*/
+  /* background-color: #eff9e5; */
+  background-color: var(--theme-sec-background);
+  position: relative;
+  padding: 8px 10px;
+  /*font-weight: bold;*/
+  border: 2px solid #4b4b4b;
+  border-bottom-left-radius: 5px;
+}
+
+.qtn_txt {
+  font-size: 20px;
+  padding-bottom: 10px;
+  font-style: italic;
+}
+
+.ans_content {
+  float: left;
+  width: 42%;
+  /*height: 97px;*/
+  position: relative;
+  /*padding: 30px 10px;*/
+  background-color: #fff;
+  border-top: 2px solid #4b4b4b;
+  border-right: 2px solid #4b4b4b;
+  border-bottom: 2px solid #4b4b4b;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.numbInput_label {
+  font-size: 20px;
+  margin-top: 2px;
+  position: absolute;
+}
+
+#numbInput_txt {
+  font-size: 20px;
+  text-align: right;
+  width: 98%;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  color: inherit;
+  max-width: 100%;
+}
+
+.wrong_mc {
+  position: absolute;
+  top: -45px;
+  right: 0px;
+  color: #fff;
+  background-color: #bc0000;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.correct_mc {
+  position: absolute;
+  top: -45px;
+  right: 0px;
+  color: #fff;
+  background-color: #00bf3a;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  /*font-weight: bold;*/
+  font-size: 23px;
+}
+
+.correctAnswer_txt {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.correctAnswer_txt span {
+  color: #00bf3a;
+}
+
+.wrong_txt {
+  color: #bc0000;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.btn_ok {
+  color: var(--theme-pri-text-color);
+  background-color: var(--theme-pri-color);
+  border: 1px solid var(--theme-btn-border);
+  text-align: center;
+  margin: 7px;
+  width: 85px;
+  line-height: 1.2;
+}
+
+.btn_ok:hover {
+  color: var(--theme-pri-text-color);
+}
+
+.btn_explain {
+  color: var(--theme-pri-text-color);
+  background-color: var(--theme-pri-color);
+  border: 1px solid var(--theme-btn-border);
+  text-align: center;
+  margin: 7px;
+  width: 85px;
+  line-height: 1.2;
+}
+
+.btn_explain:hover {
+  color: var(--theme-pri-text-color);
+}
+
+.btn_next {
+  color: var(--theme-pri-text-color);
+  background-color: var(--theme-pri-color);
+  border: 1px solid var(--theme-btn-border);
+  text-align: center;
+  margin: 7px;
+  width: 85px;
+  line-height: 1.2;
+}
+
+.btn_next:hover {
+  color: var(--theme-pri-text-color);
+}
+
+.btn_reset {
+  color: var(--theme-pri-text-color);
+  background-color: var(--theme-pri-color);
+  border: 1px solid var(--theme-btn-border);
+  text-align: center;
+  margin: 7px;
+  width: 85px;
+  line-height: 1.2;
+}
+
+.btn_reset:hover {
+  color: var(--theme-pri-text-color);
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+/* Explain div */
+#explain_mc {
+  /* padding: 20px; */
+  /*z-index: 10000;
+  top: 0px;
+  left: 0px;*/
+  top: 0px;
+  overflow: auto;
+  border-top: none;
+  background-color: #FFF;
+}
+
+#explain_mc .popuphead {
+  position: relative;
+  /*height: 7%;*/
+  background-color: var(--theme-popup-background);
+}
+
+#explain_mc .popuphead h2 {
+  /*padding: 10px 0px;*/
+}
+
+#explain_mc .popupcontent {
+  position: relative;
+  /*height: 93%;*/
+  /*min-height: 330px;*/
+}
+
+#explain_mc .birdsExplain_container {
+  /*height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;*/
+  width: 100%;
+  background-color: var(--theme-popup-background);
+}
+
+.birdsExplain {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  display: none !important;
+}
+
+.birdsExplain_div {
+  /*position: absolute;*/
+  /*width: 100px;*/
+  height: 100px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-bottom: 10px;
+}
+
+#eagleExplain_mc {
+  top: 0px;
+  left: 20px;
+}
+
+#hornbillExplain_mc {
+  top: 0px;
+  left: 180px;
+}
+
+#owlExplain_mc {
+  top: 0px;
+  left: 350px;
+}
+
+#parrotExplain_mc {
+  top: 0px;
+  left: 500px;
+}
+
+#pelicanExplain_mc {
+  top: 0px;
+  left: 650px;
+}
+
+.eaglePix_explain {
+  background-image: url(../images/birds/eagle.svg);
+}
+
+.hornbillPix_explain {
+  background-image: url(../images/birds/hornbill.svg);
+}
+
+.woodpeckerPix_explain {
+  background-image: url(../images/birds/woodpecker.svg);
+}
+
+.swanPix_explain {
+  background-image: url(../images/birds/swan.svg);
+}
+
+.sparrowPix_explain {
+  background-image: url(../images/birds/sparrow.svg);
+}
+
+.robinPix_explain {
+  background-image: url(../images/birds/robin.svg);
+}
+
+.pigeonPix_explain {
+  background-image: url(../images/birds/pigeon.svg);
+}
+
+.pelicanPix_explain {
+  background-image: url(../images/birds/pelican.svg);
+}
+
+.parrotPix_explain {
+  background-image: url(../images/birds/parrot.svg);
+}
+
+.owlPix_explain {
+  background-image: url(../images/birds/owl.svg);
+}
+
+#explain_mc .birdsAnswer_container {
+  background-color: #fff;
+  /*height: 30%;*/
+  border-top: 2px solid #4b4b4b;
+  display: flex;
+  /*flex-direction: column;
+  justify-content: center;*/
+  bottom: 0px;
+  width: 100%;
+  /*position: absolute;*/
+  padding-top: 40px;
+}
+
+.birdsExplain_txt {
+  font-family: "Montserrat-Bold";
+  margin-top: 120px;
+  width: 150px;
+}
+
+.exprs_txt {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  justify-content: left;
+  font-family: "Montserrat-Bold";
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 18px;
+  font-style: italic;
+}
+
+.exprs_txt div {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.vals_txt {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  justify-content: left;
+  font-family: "Montserrat-Bold";
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.vals_txt div {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.answer_txt {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  justify-content: left;
+  font-family: "Montserrat-Bold";
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.answer_txt div {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.btn_close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.btn_close:hover {
+  color: var(--theme-pri-text-color);
+}
+
+.popup_inst {
+  /*z-index: 20;
+  top: 0px;
+  left: 0px;
+  margin-bottom: 48px;*/
+  z-index: 8;
+}
+
+.popup_inst .eaglePix {
+  width: 50px;
+  height: 80px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url(../images/birds/eagle.svg);
+  float: left;
+  margin-right: 20px;
+}
+
+.popup_inst .owlPix {
+  width: 50px;
+  height: 80px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url(../images/birds/owl.svg);
+  float: left;
+  margin-right: 20px;
+}
+
+.popup_inst .parrotPix {
+  width: 50px;
+  height: 80px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url(../images/birds/parrot.svg);
+  float: left;
+  margin-right: 20px;
+}
+
+.popup_inst .pelicanPix {
+  width: 50px;
+  height: 80px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url(../images/birds/pelican.svg);
+  float: left;
+  margin-right: 20px;
+}
+
+.popup_inst .robinPix {
+  width: 50px;
+  height: 80px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url(../images/birds/robin.svg);
+  float: left;
+  margin-right: 20px;
+}
+
+.popup_inst .inst_ans_content {
+  float: none;
+  width: 150px;
+  height: 54px;
+  position: relative;
+  padding: 10px 10px;
+  background-color: #fff;
+  border: 2px solid #4b4b4b;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin: 0px 0px 1rem 0px;
+}
+
+.popup_inst .numbInput_label {
+  font-size: 20px;
+  float: left;
+}
+
+.popup_inst .numbInput_txt {
+  font-size: 20px;
+  text-align: right;
+  width: 90%;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  color: inherit;
+  float: left;
+}
+
+.popup_inst .btn_ok,
+.popup_inst .btn_explain {
+  margin: 0px 0px 1rem 0px;
+  cursor: default;
+}
+
+.popup_inst .btn_next,
+.popup_inst .btn_reset {
+  margin: 0px 0px 1rem 0px;
+  cursor: default;
+}
+
+.popup_inst .wrong {
+  color: #fff;
+  background-color: #bc0000;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  /*font-weight: bold;*/
+  font-size: 23px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.popup_inst .correct {
+  color: #fff;
+  background-color: #00bf3a;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  /*font-weight: bold;*/
+  font-size: 23px;
+}
+
+.popup_inst .score_cont {
+  margin-bottom: 1rem;
+}
+
+.popup_inst .score {
+  color: #4b4b4b;
+  font-weight: bold;
+  float: left;
+  width: auto;
+  padding: 4px 10px 4px 0px;
+  position: relative;
+  min-width: 50px;
+  background-color: #fff;
+  border-top-right-radius: 5px;
+}
+
+.popup_inst .config_cont {
+  margin-bottom: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.popup_inst .config_cont .minus,
+.popup_inst .config_cont .plus {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  color: #fff;
+  background-color: var(--theme-pri-color);
+  color: var(--theme-pri-text-color);
+  position: relative;
+  cursor: default;
+}
+
+.popup_inst .config_cont .minus span,
+.popup_inst .config_cont .plus span {
+  font-size: 40px;
+  line-height: 0;
+  text-align: center;
+  position: absolute;
+  left: 5px;
+  top: 17px;
+}
+
+.flexcenter {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.centertable {
+  display: inline-block;
+  margin: auto;
+}
+
+.Explain_mc_birdrow {
+  /*display: flex;*/
+  margin: 0 !important;
+  /*padding-top: 100px;*/
+}
+
+.Explain_mc_birdrow .colbird {
+  padding: 30px;
+  min-width: 200px;
+  max-width: 330px;
+}
+
+.Explain_mc_birdrow .colbird .birdtext {
+  text-align: center;
+}
+
+.content-container.mc {
+  min-width: 340px;
+  width: max-content;
+    margin: 0px auto;
+}
+
+.content-container.instr {
+  min-width: 310px;
+}
+.popup_mc{
+  display: none;
+  width: 100%;
+  background-color: var(--theme-popup-background);
+  overflow: auto;
+  max-height: 100%;
+  position: absolute;
+  bottom: 0px;
+  border-top: 1px solid var(--theme-popup-border);
+  z-index: 21;
+  outline: 1px solid var(--theme-popup-border);
+}
+.popup_mc .container h2 {
+  color: var(--theme-pri-color);
+  font-family: "Montserrat-Bold";
+  font-size: 16px;
+  padding: 15px 0px;
+  margin: 0;
+}
+.wrapper[device="mobile"] .popup_mc {
+  height: 100%;
+}
+.popup_mc{
+  touch-action: pan-x pan-y;
+}
+@media only screen and (max-width: 490px) {
+  .button_style{
+      padding: 0.375rem 0.4rem;
+      min-width: 50px;
+  }
+  .container-so.main .exp_footer .footer{
+      padding-left: 46px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .button_style{
+    width: auto;
+  } 
+}
