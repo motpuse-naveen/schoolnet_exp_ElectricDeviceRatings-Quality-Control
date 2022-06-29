@@ -13,7 +13,7 @@ var ActivityShell = (function () {
         "height": window.innerHeight + "px"
       })
       var deviceType = ActivityShell.DeviceType();
-      //alert("dt: " + deviceType + ", wdt: " + window.screen.width + ", ht: " + window.screen.height )
+      //alert("dt: " + deviceType + ", wdt: " + window.screen.width + ", ht: " + window.screen.height)
       $(".wrapper").attr("device", deviceType);
       if (this.IsIOSDevice()) {
         $("body").attr("platform", "ios")
@@ -36,6 +36,8 @@ var ActivityShell = (function () {
     },
     LaunchActivity: function () {
       $(".wrapper").addClass("activity");
+      $(".container-so.launch").hide();
+      $(".container-so.main").show();
       var deviceType = ActivityShell.DeviceType();
       var Android = /(android)/i.test(navigator.userAgent);
       if (deviceType == "mobile" && Android) {
@@ -43,17 +45,9 @@ var ActivityShell = (function () {
         generatePreloader();
         setTimeout(function () {
           $(".preloader").remove();
-          $(".container-so.launch").fadeOut();
-          $(".container-so.main").show();
           ActivityShell.AdjustContainerHeight();
-          ScreenSplitter.InitSplitter();
-          GuidedTour.Init();
-          EvaluateAlgebraicExpressions.LaunchActivity();
-          /* Scale Spring to fit */
-          ScreenSplitter.ScaleToFit($("#split-0"));
-          /* Scale Graph to fit */
-          ScreenSplitter.ScaleToFit($("#split-1"));
-
+          ActivityMain.LaunchActivity();
+          /*
           if (zoom1 == null) {
             hammerItScrollableContent(document.querySelector(".zoom1"));
             zoom1 = "zoom1";
@@ -62,20 +56,16 @@ var ActivityShell = (function () {
             hammerItScrollableContent(document.querySelector(".zoom2"));
             zoom2 = "zoom2";
           }
+          */
+          setTimeout(function () {
+            //GuidedTour.Init();
+          }, 500);
         }, 1000)
       }
       else {
-        $(".container-so.launch").fadeOut();
-        $(".container-so.main").show();
         this.AdjustContainerHeight();
-        ScreenSplitter.InitSplitter();
-        GuidedTour.Init();
-        EvaluateAlgebraicExpressions.LaunchActivity();
-        /* Scale Spring to fit */
-        ScreenSplitter.ScaleToFit($("#split-0"));
-        /* Scale Graph to fit */
-        ScreenSplitter.ScaleToFit($("#split-1"));
-
+        ActivityMain.LaunchActivity();
+        /*
         if (zoom1 == null) {
           hammerItScrollableContent(document.querySelector(".zoom1"));
           zoom1 = "zoom1";
@@ -84,6 +74,10 @@ var ActivityShell = (function () {
           hammerItScrollableContent(document.querySelector(".zoom2"));
           zoom2 = "zoom2";
         }
+        */
+        setTimeout(function () {
+          //GuidedTour.Init();
+        }, 500);
       }
     },
     AdjustContainerHeight: function () {
@@ -119,14 +113,21 @@ var ActivityShell = (function () {
       $(".wrapper").removeClass("small-height-landscape").removeClass("extra-small-height-landscape")
       var bodyHt = $("body").height()
       bodyHt = Number(bodyHt)
+      //alert(bodyHt);
       if (bodyHt < 440) {
-        $(".wrapper").addClass("small-height-landscape")
+        if (bodyHt < 290) {
+          $(".wrapper").addClass("extra-small-height-landscape")
+        }
+        else {
+          $(".wrapper").addClass("small-height-landscape")
+        }
       }
     },
     DeviceType: function () {
       /* This function needs changes in device detection logic 
       below code is not working for ipad it returns desktop */
       const ua = navigator.userAgent;
+      //alert(navigator.userAgent)
       if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
         if (window.screen.availWidth < 530 || window.screen.availHeight < 530) {
           return "mobile";
@@ -137,6 +138,13 @@ var ActivityShell = (function () {
       }
       else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
         return "mobile";
+      }
+      else{
+        if (navigator.userAgent.match(/Mac/) && navigator.maxTouchPoints && navigator.maxTouchPoints > 2) {
+          if (window.screen.availWidth < 1024 || window.screen.availHeight < 1024) {
+            return "tablet"
+          }
+        }
       }
       return "desktop";
     },
@@ -196,18 +204,18 @@ var ActivityShell = (function () {
 
     OnOrientationChange: function () {
       this.AdjustContainerHeight();
-      ScreenSplitter.InitSplitter();
+      //ScreenSplitter.InitSplitter();
       if ($(".popup").is(":visible")) {
         this.AdjustSplitPanelsOnOpenPopup($(".popup:visible"));
       }
       /* Scale Spring to fit */
-      ScreenSplitter.ScaleToFit($("#split-0"));
+      //ScreenSplitter.ScaleToFit($("#split-0"));
       /* Scale Graph to fit */
-      ScreenSplitter.ScaleToFit($("#split-1"));
+      //ScreenSplitter.ScaleToFit($("#split-1"));
       var deviceType = ActivityShell.DeviceType();
 
       //update Activity view OnOrientationChange
-      EvaluateAlgebraicExpressions.OnOrientationChange();
+      ActivityMain.OnOrientationChange();
 
       if (deviceType == "mobile") {
         if (window.matchMedia("(orientation: portrait)").matches) {
@@ -233,14 +241,14 @@ var ActivityShell = (function () {
       var deviceType = this.DeviceType();
       if (deviceType == "desktop") {
         this.AdjustContainerHeight();
-        ScreenSplitter.InitSplitter(null,true);
+        //ScreenSplitter.InitSplitter(null, true);
         if ($(".popup").is(":visible")) {
           this.AdjustSplitPanelsOnOpenPopup($(".popup:visible"));
         }
         /* Scale Spring to fit */
-        ScreenSplitter.ScaleToFit($("#split-0"));
+        //ScreenSplitter.ScaleToFit($("#split-0"));
         /* Scale Graph to fit */
-        ScreenSplitter.ScaleToFit($("#split-1"));
+        //ScreenSplitter.ScaleToFit($("#split-1"));
       }
       GuidedTour.OnResize();
     },
@@ -301,8 +309,8 @@ $(document).on("click", "#btn_sheet", function (event) {
 $(document).on("click", "#btn_info", function (event) {
   ActivityShell.TogglePopup($(".popup.info"), $(this));
 });
-$(document).on("click", "#btn_procedure", function (event) {
-  ActivityShell.TogglePopup($(".popup.procedure"), $(this));
+$(document).on("click", "#btn_aim", function (event) {
+  ActivityShell.TogglePopup($(".popup.aim"), $(this));
 });
 
 $(document).on("click", ".btn-close-popup", function (event) {

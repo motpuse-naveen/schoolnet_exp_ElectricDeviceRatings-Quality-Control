@@ -390,4 +390,20 @@ body {
     .small-height-landscape[device="tablet"] .titlemobilelandscape{
         display: block !important;
     }
+    /*Extra small height*/
+    .extra-small-height-landscape[device="mobile"] .launch_expl_logo {
+        height: 54px;
+        margin-top: 10px;
+    }
+    .extra-small-height-landscape[device="mobile"] .launch_expl_title .exploriment_title h1{
+        font-size: 28px;
+    }
+    .extra-small-height-landscape[device="mobile"] .launch_expl_title .exploriment_title .subtitle{
+        font-size: 14px;
+    }
+    .extra-small-height-landscape[device="mobile"] .btn_launch{
+        font-size: 14px;
+        min-width: 110px;
+        padding: 0.275rem 0.3rem;
+    }
 }

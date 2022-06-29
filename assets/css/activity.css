@@ -1,258 +1,222 @@
-#set_mc {
-  /*padding: 0px 30px 0px 30px;*/
-  width: 100%;
-  position: relative;
-  /*height: 100%;
-  min-height: 500px;*/
+.exp-container{
+  height: 100%;
   overflow: auto;
-  /*display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;*/
-  width: max-content;
-  /*top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);*/
-  margin: 0px auto;
+}
+.circuit-wrap{
+  padding-top: 50px;
+}
+.circuit-diagram{
+  position: relative;
+  width: 572px;
+  height: 400px;
+  margin: 0 auto;
+}
+.dropwire.hor{
+  position: absolute;
+  width: 130px;
+  height: 20px;
+  /*background-color: red;
+  opacity: 0.6;*/
+}
+.dropwire.ver{
+  position: absolute;
+  width: 20px;
+  height: 130px;
+  /*background-color: red;
+  opacity: 0.6;*/
+}
+.t1{top: 0px;}
+.t2{top: 110px;}
+.t3{top: 220px;}
+.l1{left: 0px;}
+.l2{left: 110px;}
+.l3{left: 220px;}
+.l4{left: 330px;}
+.l5{left: 440px;}
+.l6{left: 550px;}
+
+.dropwire .endpoint{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+.dropwire .endpoint.left{
+  left:0px;
+  top:-10px
+}
+.dropwire .endpoint.right{
+  right: 0px;
+  top: -10px;
 }
 
-.birds_set_mc {
+.dropwire.hor .line{
+  height: 1px;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='black' stroke-width='4' stroke-dasharray='4%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
   position: absolute;
-  width: 65px;
-  height: 65px;
-  background-color: #c4f0f7;
-  border: 2px solid var(--theme-pri-color);
+  top: 50%;
+  left:0px;
+  width: 100%;
+}
+.dropwire.hor .line.noline{
+  background-image: none
+}
+.dropwire .endpoint.outcir{
+  background-color: #A25225;
   border-radius: 50%;
-  z-index: 5;
-  left: -18px;
-  top: -12px;
 }
-
-/*
-#eagleSet_mc {
-  left: 40px;
-  top: 40px;
-}
-#hornbillSet_mc {
-  left: 40px;
-  top: 140px;
-}
-#owlSet_mc {
-  left: 40px;
-  top: 240px;
-}
-#parrotSet_mc {
-  left: 40px;
-  top: 340px;
-}
-#pelicanSet_mc {
-  left: 40px;
-  top: 440px;
-}
-*/
-
-.eaglePix_sym {
-  width: 65px;
-  height: 85px;
-  background-image: url(../images/birds/eagle.svg);
-  background-repeat: no-repeat;
+.dropwire .endpoint .inncir{
+  background-color: #BB6928;
+  border-radius: 50%;
   position: absolute;
-  top: -25px;
+  width: 10px;
+  height: 10px;
+  top: 5px;
+  left: 5px;
+}
+.v-wire-img{
+  height: 105px;
+  width: 20px;
+  position: absolute;
+  top: 12px;
   left: 0px;
 }
-
-.hornbillPix_sym {
-  width: 70px;
-  height: 100px;
-  background-image: url(../images/birds/hornbill.svg);
-  background-repeat: no-repeat;
+.battery-wrap{
   position: absolute;
-  top: -25px;
-}
-
-.woodpeckerPix_sym {
-  width: 50px;
-  height: 90px;
-  background-image: url(../images/birds/woodpecker.svg);
-  background-repeat: no-repeat;
-  position: absolute;
-  top: -15px;
-  left: 6px;
-}
-
-.swanPix_sym {
-  width: 75px;
-  height: 85px;
-  background-image: url(../images/birds/swan.svg);
-  background-repeat: no-repeat;
-  position: absolute;
-  top: -25px;
-  left: 5px;
-}
-
-.sparrowPix_sym {
-  width: 75px;
-  height: 71px;
-  background-image: url(../images/birds/sparrow.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-  top: -10px;
-  left: -15px;
-}
-
-.robinPix_sym {
-  width: 75px;
-  height: 70px;
-  background-image: url(../images/birds/robin.svg);
-  background-repeat: no-repeat;
-  position: absolute;
-  top: -10px;
-  left: -15px;
-}
-
-.pigeonPix_sym {
-  width: 85px;
-  height: 75px;
-  background-image: url(../images/birds/pigeon.svg);
-  background-repeat: no-repeat;
-  position: absolute;
-  top: -15px;
-  left: -15px;
-}
-
-.pelicanPix_sym {
-  width: 80px;
-  height: 80px;
-  background-image: url(../images/birds/pelican.svg);
-  background-repeat: no-repeat;
-  position: absolute;
-  top: -20px;
-  left: -10px;
-}
-
-.parrotPix_sym {
-  width: 60px;
-  height: 100px;
-  background-image: url(../images/birds/parrot.svg);
-  background-repeat: no-repeat;
-  position: absolute;
-  top: -20px;
-  left: -1px;
-}
-
-.owlPix_sym {
-  width: 65px;
-  height: 80px;
-  background-image: url(../images/birds/owl.svg);
-  background-repeat: no-repeat;
-  position: absolute;
-  top: -20px;
-  left: -10px;
-}
-
-.birds_set_mc_txt {
-  /* width: 350px; */
-  height: 48px;
-  padding: 10px 20px 10px 60px;
-  /*overflow: hidden;*/
-  background-color: #fff;
-  border: 2px solid var(--theme-pri-color);
-  border-radius: 5px;
-  position: relative;
-  /*font-weight: bold;*/
-  margin: 45px 30px;
-}
-
-/*Quiz div*/
-.instruction_cont {
-  background-color: #fff;
-  padding: 20px;
-  height: auto;
+  top: 0px;
+  left: 0px;
   width: 100%;
 }
-
-.instruction_cont .title_txt {
-  color: #545454;
-  /*font-weight: bold;*/
+.battery-img{
+  position: absolute;
+  bottom: -10px;
+  left: 9px;
+  width: 112px;
 }
-
-.instruction_cont .instruction_txt {
-  color: #a6162c;
-  /*font-weight: bold;*/
-  font-style: italic;
+.volt-wrap{
+  position: absolute;
+  width: 73px;
+  left: 28px;
+  top: -40px;
+  color: #FFF;
 }
-
-.quiz_cont {
-  background-color: #f2f2f2;
-  padding: 0px 30px;
-  height: auto;
-  width: 100%;
-  /*top: 50%;
-  left: 50%;
-  transform: translate(-50%, -65%);*/
-  position: relative;
+.volt-wrap .plus{
+  position:absolute;
+  left: 2px;
+  top: 0px;
 }
-
-.quiz_cont_inner {
-  position: relative;
-  width: 100%;
-  /*height: 290px;*/
-  padding: 20px 0px 10px 0px;
+.volt-wrap .minus{
+  position:absolute;
+  right: 2px;
+  top: 0px;
 }
-
-.config_cont {
-  margin-bottom: 40px;
+.volt-wrap .value{
   text-align: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
+.buttonMinus{
+  position: absolute;
+  left: 28px;
+  top: 20px;
+  width: 25px;
+  height: 25px;
+  border: none;
+  background: transparent;
+  padding: 0px;
+}
+.buttonPlus{
+  position: absolute;
+  right: 26px;
+  top: 20px;
+  width: 25px;
+  height: 25px;
+  border: none;
+  background: transparent;
+  padding: 0px;
+}
+.dragObject, .dragObjectClone{
+  position: absolute;
+  width: 85px;
+}
+.dragObjectCloneDummy{
+  width: 85px;
+}
+.dragSeperator{
+  position: absolute;
+  width: 1px;
+  height: 90px;
+}
+.dragSeperator span{
+  position: absolute;
+  top: 10%;
+  left: 0px;
+  height: 80%;
+  width: 1px;
+  background-color: #9e9e9e;
+  margin: 0 10%;
+}
+.dragText{
+  position: absolute;
+  width: 85px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 18px;
+}
+.dt1{top:285px;}
+.dt2{top:312px;}
+.dt3{top:100%;}
 
-.config_cont .btn_minus,
-.config_cont .btn_plus {
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  color: #fff;
-  background-color: var(--theme-pri-color);
-  color: var(--theme-pri-text-color);
+.dl1{left:0px;}
+.dl2{left:100px;}
+.dl3{left:200px;}
+.dl4{left:300px;}
+.dl5{left:400px;}
+.dl6{left:500px;}
+
+.s1{left:92px;}
+.s2{left:192px;}
+.s3{left:292px;}
+.s4{left:392px;}
+.s5{left:492px;}
+
+.txt1{left: 0px;}
+.txt2{left: 0px;}
+.txt3{left: 0px;}
+.txt4{left: 0px;}
+
+.ques-panel{
+  padding: 0.5rem 1rem;
+  border-top: 1px solid var(--primary-text);
   position: relative;
+  font-size: 15px;
+}
+.lp60{padding-left: 0px;}
+.ques-text{
+  position: relative;
+}
+.ques-no{
+  
+}
+.options{
+  height: 25px;
+  margin-top: 10px;
+  /*margin-bottom: 20px;*/
+}
+.options .opt{
+  float: left;
+  width: 20%;
+}
+.options .opt input[type="checkbox"]{
+  width: 25px;
+  height: 25px;
   float: left;
 }
-
-.config_cont .btn_minus span,
-.config_cont .btn_plus span {
-  font-size: 40px;
-  line-height: 0;
-  text-align: center;
+.options .opt label{
+  /*display: block;
+  float: left;
+  padding: 1px 5px;*/
+}
+.score-pan{
   position: absolute;
-  left: 5px;
-  top: 17px;
-}
-
-.config_cont .btn_plus {
-  float: right;
-}
-
-.config_cont button:focus {
-  box-shadow: none;
-}
-
-.config_cont input {
-  text-align: center;
-  width: 100px;
-  outline: none;
-  /*color: inherit;*/
-  padding: 4px;
-  margin: 1px 5px;
-  border: 1px solid var(--theme-pri-color);
-  border-radius: 4px;
-  max-width: 80px;
-}
-
-.cmb_cont {
-  background-color: #f2f2f2;
-  padding: 20px;
+  top: -30px;
 }
 
 .score_cont {
@@ -260,7 +224,7 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   width: fit-content;
-  height: 35px;
+  height: 30px;
   /* background-color: #4b4b4b; */
   position: relative;
   background: rgb(75, 75, 75);
@@ -287,8 +251,8 @@
   /*font-weight: bold;*/
   float: left;
   width: 80px;
-  padding: 4px 0px 0px 8px;
-  height: 32px;
+  padding: 2px 0px 0px 6px;
+  height: 26px;
   position: relative;
   top: 0px;
   left: 0px;
@@ -321,636 +285,128 @@
   font-weight: bold;
   float: left;
   width: auto;
-  padding: 4px 10px 4px 0px;
+  padding: 2px 10px 1px 0px;
   position: relative;
   min-width: 50px;
   background-color: #fff;
   border-top-right-radius: 5px;
 }
 
-.ques_cont {
-  width: 100%;
-  /*height: 100px;*/
+/* The container */
+.checkcontainer {
+  display: block;
   position: relative;
+  padding-left: 28px;
+  margin-left: 28px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.ques_content {
-  float: left;
-  width: 58%;
-  /*height: 97px;*/
-  /* background-color: #eff9e5; */
-  background-color: var(--theme-sec-background);
-  position: relative;
-  padding: 8px 10px;
-  /*font-weight: bold;*/
-  border: 2px solid #4b4b4b;
-  border-bottom-left-radius: 5px;
-}
-
-.qtn_txt {
-  font-size: 20px;
-  padding-bottom: 10px;
-  font-style: italic;
-}
-
-.ans_content {
-  float: left;
-  width: 42%;
-  /*height: 97px;*/
-  position: relative;
-  /*padding: 30px 10px;*/
-  background-color: #fff;
-  border-top: 2px solid #4b4b4b;
-  border-right: 2px solid #4b4b4b;
-  border-bottom: 2px solid #4b4b4b;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.numbInput_label {
-  font-size: 20px;
-  margin-top: 2px;
+/* Hide the browser's default checkbox */
+.checkcontainer input {
   position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
 
-#numbInput_txt {
-  font-size: 20px;
-  text-align: right;
-  width: 98%;
-  border: none;
-  outline: none;
-  background-color: #fff;
-  color: inherit;
-  max-width: 100%;
-}
-
-.wrong_mc {
+/* Create a custom checkbox */
+.checkmark {
   position: absolute;
-  top: -45px;
-  right: 0px;
-  color: #fff;
-  background-color: #bc0000;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 23px;
-}
-
-.correct_mc {
-  position: absolute;
-  top: -45px;
-  right: 0px;
-  color: #fff;
-  background-color: #00bf3a;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  text-align: center;
-  /*font-weight: bold;*/
-  font-size: 23px;
-}
-
-.correctAnswer_txt {
-  text-align: right;
-  margin-top: 10px;
-}
-
-.correctAnswer_txt span {
-  color: #00bf3a;
-}
-
-.wrong_txt {
-  color: #bc0000;
-}
-
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
-.btn_ok {
-  color: var(--theme-pri-text-color);
-  background-color: var(--theme-pri-color);
-  border: 1px solid var(--theme-btn-border);
-  text-align: center;
-  margin: 7px;
-  width: 85px;
-  line-height: 1.2;
-}
-
-.btn_ok:hover {
-  color: var(--theme-pri-text-color);
-}
-
-.btn_explain {
-  color: var(--theme-pri-text-color);
-  background-color: var(--theme-pri-color);
-  border: 1px solid var(--theme-btn-border);
-  text-align: center;
-  margin: 7px;
-  width: 85px;
-  line-height: 1.2;
-}
-
-.btn_explain:hover {
-  color: var(--theme-pri-text-color);
-}
-
-.btn_next {
-  color: var(--theme-pri-text-color);
-  background-color: var(--theme-pri-color);
-  border: 1px solid var(--theme-btn-border);
-  text-align: center;
-  margin: 7px;
-  width: 85px;
-  line-height: 1.2;
-}
-
-.btn_next:hover {
-  color: var(--theme-pri-text-color);
-}
-
-.btn_reset {
-  color: var(--theme-pri-text-color);
-  background-color: var(--theme-pri-color);
-  border: 1px solid var(--theme-btn-border);
-  text-align: center;
-  margin: 7px;
-  width: 85px;
-  line-height: 1.2;
-}
-
-.btn_reset:hover {
-  color: var(--theme-pri-text-color);
-}
-
-.alignCenter {
-  text-align: center;
-}
-
-/* Explain div */
-#explain_mc {
-  /* padding: 20px; */
-  /*z-index: 10000;
-  top: 0px;
-  left: 0px;*/
-  top: 0px;
-  overflow: auto;
-  border-top: none;
+  top: 0;
+  left: 0;
+  height: 22px;
+  width: 22px;
   background-color: #FFF;
+  border: 1px solid #999;
+  border-radius: 3px;
 }
 
-#explain_mc .popuphead {
-  position: relative;
-  /*height: 7%;*/
-  background-color: var(--theme-popup-background);
+/* On mouse-over, add a grey background color */
+.checkcontainer:hover input ~ .checkmark {
+  /*background-color: #ccc;*/
 }
 
-#explain_mc .popuphead h2 {
-  /*padding: 10px 0px;*/
+/* When the checkbox is checked, add a blue background */
+.checkcontainer input:checked ~ .checkmark {
+  background-color: #FFF;
+  border: 1px solid #999;
+  border-radius: 3px;
 }
 
-#explain_mc .popupcontent {
-  position: relative;
-  /*height: 93%;*/
-  /*min-height: 330px;*/
-}
-
-#explain_mc .birdsExplain_container {
-  /*height: 70%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
   position: absolute;
-  top: 0px;
-  left: 0px;*/
-  width: 100%;
-  background-color: var(--theme-popup-background);
-}
-
-.birdsExplain {
-  display: flex;
-  text-align: center;
-  flex-direction: row;
-  justify-content: space-between;
-  position: relative;
-  display: none !important;
-}
-
-.birdsExplain_div {
-  /*position: absolute;*/
-  /*width: 100px;*/
-  height: 100px;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  margin-bottom: 10px;
-}
-
-#eagleExplain_mc {
-  top: 0px;
-  left: 20px;
-}
-
-#hornbillExplain_mc {
-  top: 0px;
-  left: 180px;
-}
-
-#owlExplain_mc {
-  top: 0px;
-  left: 350px;
-}
-
-#parrotExplain_mc {
-  top: 0px;
-  left: 500px;
-}
-
-#pelicanExplain_mc {
-  top: 0px;
-  left: 650px;
-}
-
-.eaglePix_explain {
-  background-image: url(../images/birds/eagle.svg);
-}
-
-.hornbillPix_explain {
-  background-image: url(../images/birds/hornbill.svg);
-}
-
-.woodpeckerPix_explain {
-  background-image: url(../images/birds/woodpecker.svg);
-}
-
-.swanPix_explain {
-  background-image: url(../images/birds/swan.svg);
-}
-
-.sparrowPix_explain {
-  background-image: url(../images/birds/sparrow.svg);
-}
-
-.robinPix_explain {
-  background-image: url(../images/birds/robin.svg);
-}
-
-.pigeonPix_explain {
-  background-image: url(../images/birds/pigeon.svg);
-}
-
-.pelicanPix_explain {
-  background-image: url(../images/birds/pelican.svg);
-}
-
-.parrotPix_explain {
-  background-image: url(../images/birds/parrot.svg);
-}
-
-.owlPix_explain {
-  background-image: url(../images/birds/owl.svg);
-}
-
-#explain_mc .birdsAnswer_container {
-  background-color: #fff;
-  /*height: 30%;*/
-  border-top: 2px solid #4b4b4b;
-  display: flex;
-  /*flex-direction: column;
-  justify-content: center;*/
-  bottom: 0px;
-  width: 100%;
-  /*position: absolute;*/
-  padding-top: 40px;
-}
-
-.birdsExplain_txt {
-  font-family: "Montserrat-Bold";
-  margin-top: 120px;
-  width: 150px;
-}
-
-.exprs_txt {
-  display: flex;
-  text-align: center;
-  flex-direction: row;
-  justify-content: left;
-  font-family: "Montserrat-Bold";
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 18px;
-  font-style: italic;
-}
-
-.exprs_txt div {
-  padding-left: 6px;
-  padding-right: 6px;
-}
-
-.vals_txt {
-  display: flex;
-  text-align: center;
-  flex-direction: row;
-  justify-content: left;
-  font-family: "Montserrat-Bold";
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-.vals_txt div {
-  padding-left: 6px;
-  padding-right: 6px;
-}
-
-.answer_txt {
-  display: flex;
-  text-align: center;
-  flex-direction: row;
-  justify-content: left;
-  font-family: "Montserrat-Bold";
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-.answer_txt div {
-  padding-left: 6px;
-  padding-right: 6px;
-}
-
-.btn_close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
-.btn_close:hover {
-  color: var(--theme-pri-text-color);
-}
-
-.popup_inst {
-  /*z-index: 20;
-  top: 0px;
-  left: 0px;
-  margin-bottom: 48px;*/
-  z-index: 8;
-}
-
-.popup_inst .eaglePix {
-  width: 50px;
-  height: 80px;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  background-image: url(../images/birds/eagle.svg);
-  float: left;
-  margin-right: 20px;
-}
-
-.popup_inst .owlPix {
-  width: 50px;
-  height: 80px;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  background-image: url(../images/birds/owl.svg);
-  float: left;
-  margin-right: 20px;
-}
-
-.popup_inst .parrotPix {
-  width: 50px;
-  height: 80px;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  background-image: url(../images/birds/parrot.svg);
-  float: left;
-  margin-right: 20px;
-}
-
-.popup_inst .pelicanPix {
-  width: 50px;
-  height: 80px;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  background-image: url(../images/birds/pelican.svg);
-  float: left;
-  margin-right: 20px;
-}
-
-.popup_inst .robinPix {
-  width: 50px;
-  height: 80px;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  background-image: url(../images/birds/robin.svg);
-  float: left;
-  margin-right: 20px;
-}
-
-.popup_inst .inst_ans_content {
-  float: none;
-  width: 150px;
-  height: 54px;
-  position: relative;
-  padding: 10px 10px;
-  background-color: #fff;
-  border: 2px solid #4b4b4b;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  margin: 0px 0px 1rem 0px;
-}
-
-.popup_inst .numbInput_label {
-  font-size: 20px;
-  float: left;
-}
-
-.popup_inst .numbInput_txt {
-  font-size: 20px;
-  text-align: right;
-  width: 90%;
-  border: none;
-  outline: none;
-  background-color: #fff;
-  color: inherit;
-  float: left;
-}
-
-.popup_inst .btn_ok,
-.popup_inst .btn_explain {
-  margin: 0px 0px 1rem 0px;
-  cursor: default;
-}
-
-.popup_inst .btn_next,
-.popup_inst .btn_reset {
-  margin: 0px 0px 1rem 0px;
-  cursor: default;
-}
-
-.popup_inst .wrong {
-  color: #fff;
-  background-color: #bc0000;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  text-align: center;
-  /*font-weight: bold;*/
-  font-size: 23px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.popup_inst .correct {
-  color: #fff;
-  background-color: #00bf3a;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  text-align: center;
-  /*font-weight: bold;*/
-  font-size: 23px;
-}
-
-.popup_inst .score_cont {
-  margin-bottom: 1rem;
-}
-
-.popup_inst .score {
-  color: #4b4b4b;
-  font-weight: bold;
-  float: left;
-  width: auto;
-  padding: 4px 10px 4px 0px;
-  position: relative;
-  min-width: 50px;
-  background-color: #fff;
-  border-top-right-radius: 5px;
-}
-
-.popup_inst .config_cont {
-  margin-bottom: 1rem;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
-.popup_inst .config_cont .minus,
-.popup_inst .config_cont .plus {
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  color: #fff;
-  background-color: var(--theme-pri-color);
-  color: var(--theme-pri-text-color);
-  position: relative;
-  cursor: default;
-}
-
-.popup_inst .config_cont .minus span,
-.popup_inst .config_cont .plus span {
-  font-size: 40px;
-  line-height: 0;
-  text-align: center;
-  position: absolute;
-  left: 5px;
-  top: 17px;
-}
-
-.flexcenter {
-  display: flex;
-  text-align: center;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.centertable {
-  display: inline-block;
-  margin: auto;
-}
-
-.Explain_mc_birdrow {
-  /*display: flex;*/
-  margin: 0 !important;
-  /*padding-top: 100px;*/
-}
-
-.Explain_mc_birdrow .colbird {
-  padding: 30px;
-  min-width: 200px;
-  max-width: 330px;
-}
-
-.Explain_mc_birdrow .colbird .birdtext {
-  text-align: center;
-}
-
-.content-container.mc {
-  min-width: 340px;
-  width: max-content;
-    margin: 0px auto;
-}
-
-.content-container.instr {
-  min-width: 310px;
-}
-.popup_mc{
   display: none;
-  width: 100%;
-  background-color: var(--theme-popup-background);
-  overflow: auto;
-  max-height: 100%;
+}
+
+/* Show the checkmark when checked */
+.checkcontainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkcontainer .checkmark:after {
+  left: 7px;
+    top: 2px;
+    width: 7px;
+    height: 14px;
+  border: solid var(--primary-text);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.dropped-wire {
   position: absolute;
-  bottom: 0px;
-  border-top: 1px solid var(--theme-popup-border);
-  z-index: 21;
-  outline: 1px solid var(--theme-popup-border);
+  width: 130px;
+  height: 20px;
 }
-.popup_mc .container h2 {
-  color: var(--theme-pri-color);
-  font-family: "Montserrat-Bold";
-  font-size: 16px;
-  padding: 15px 0px;
-  margin: 0;
+.h-wire-img {
+  height: 20px;
+    width: 90px;
+    position: absolute;
+    left: 20px;
+    top: 0px;
 }
-.wrapper[device="mobile"] .popup_mc {
+.d-wire-object{
+  width: 100%;
   height: 100%;
 }
-.popup_mc{
-  touch-action: pan-x pan-y;
+.dropped-object{
+  width: 90px;
 }
-@media only screen and (max-width: 490px) {
-  .button_style{
-      padding: 0.375rem 0.4rem;
-      min-width: 50px;
-  }
-  .container-so.main .exp_footer .footer{
-      padding-left: 46px;
-  }
+.dropped-object-boat{
+  width: 110px;
+}
+.ammeter-text{
+  position: absolute;
+    left: 0px;
+    top: 6px;
+    color: #FFF;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+.dropped-object .ammeter-text{
+  display: block;
+}
+.correct-mark, .wrong-mark{
+  float: left;
 }
 
-@media only screen and (max-width: 400px) {
-  .button_style{
-    width: auto;
-  } 
+.wrong-mark img{
+  height: 18px;
+  margin-bottom: 2px;
+}
+.correct-mark img{
+  height: 18px;
+  margin-bottom: 2px;
 }

@@ -1,0 +1,259 @@
+stop()
+
+
+instructionPpt_mc.isMinimizable = true
+instructionPpt_mc.isMinimized = true
+instructionPpt_mc.execInstructionPpt("electCurrent_Rating_Intro_InstrBk")
+
+
+
+basicCircuit_mc.isTopVisible = false
+basicCircuit_mc.isMiddleVisible = true
+basicCircuit_mc.isBottomVisible = true
+basicCircuit_mc.areConnectLinesVisible = true
+
+for (var i: Number = 1; i <= 20; i++) {
+	makeElementMoveable(this["connector" + i + "_mc"])
+	this["connector" + i + "_mc"].resistance = 0.0001
+}
+
+
+makeElementMoveable(bulb_mc)
+makeElementMoveable(robot_mc)
+makeElementMoveable(boat_mc)
+makeElementMoveable(horse_mc)
+makeElementMoveable(ammeter_mc)
+
+
+var electElementPositionArray: Array = new Array()
+
+for (var i: Number = 1; i <= 20; i++) {
+	saveElectElementPosition(this["connector" + i + "_mc"])
+}
+saveElectElementPosition(bulb_mc)
+saveElectElementPosition(robot_mc)
+saveElectElementPosition(boat_mc)
+saveElectElementPosition(horse_mc)
+saveElectElementPosition(ammeter_mc)
+
+
+
+
+
+basicCircuit_mc.link11_mc.permaFixElement(battery_mc)
+
+battery_mc.voltage = 1
+battery_mc.isVoltageChangeable = true
+basicCircuit_mc.initCircuit()
+
+battery_mc.onStatusChanged = function () {
+	basicCircuit_mc.calculateSimulation()
+}
+
+var curQtnNo: Number = 1
+var totalQtns: Number = 0
+var correctQtns: Number = 0
+var ratingArray: Array = [0, 0, 0, 0]
+var isRatingCorrectArray: Array = [true, true, true, true]
+
+
+score_txt.text = "" + correctQtns + "/" + totalQtns
+
+
+function saveElectElementPosition(mElement_mc: MovieClip) {
+	var mArray: Array = new Array()
+	mArray.push(mElement_mc)
+	mArray.push(mElement_mc._x)
+	mArray.push(mElement_mc._y)
+	mArray.push(mElement_mc._xscale)
+	mArray.push(mElement_mc._yscale)
+
+	electElementPositionArray.push(mArray)
+}
+
+function restoreAllElementPositions() {
+	for (var i: Number = 0; i < electElementPositionArray.length; i++) {
+		var myElement_mc: clsElectricElement = electElementPositionArray[i][0]
+		basicCircuit_mc.interactWithElementBeforeDragDrop(myElement_mc)
+		myElement_mc.onDetachedFromCircuit()
+		myElement_mc._x = electElementPositionArray[i][1]
+		myElement_mc._y = electElementPositionArray[i][2]
+		myElement_mc._xscale = electElementPositionArray[i][3]
+		myElement_mc._yscale = electElementPositionArray[i][4]
+	}
+
+}
+
+
+
+function makeElementMoveable(mElement_mc: clsElectricElement) {
+
+	mElement_mc.boundary_mc = boundary_mc
+	mElement_mc.isDraggable = true;
+	mElement_mc.afterDragDropEnds = function () {
+		var mObj: clsElectricElement = this
+		mObj._xscale = 100
+		mObj._yscale = 100
+		basicCircuit_mc.interactWithElementAfterDragDrop(mObj)
+	}
+	mElement_mc.beforeDragDropStarts = function () {
+
+		var mObj: clsElectricElement = this
+		mObj.current = 0
+		basicCircuit_mc.interactWithElementBeforeDragDrop(mObj)
+	}
+}
+
+resetExperiment()
+
+function resetExperiment() {
+	curQtnNo = 1
+	totalQtns = 0
+	correctQtns = 0
+	newQuestion()
+}
+
+
+function newQuestion() {
+	qNo_txt.text = "Q. No " + curQtnNo
+	score_txt.text = "" + correctQtns + "/" + totalQtns
+	next_btn._visible = false
+	OK_btn._visible = true
+
+	bulb_chb.selected = false
+	correctBulb_mc._visible = false
+	wrongBulb_mc._visible = false
+
+	robot_chb.selected = false
+	correctRobot_mc._visible = false
+	wrongRobot_mc._visible = false
+
+	boat_chb.selected = false
+	correctBoat_mc._visible = false
+	wrongBoat_mc._visible = false
+
+	horse_chb.selected = false
+	correctHorse_mc._visible = false
+	wrongHorse_mc._visible = false
+
+	restoreAllElementPositions()
+
+	bulb_mc.repairIfBroken()
+	robot_mc.repairIfBroken()
+	boat_mc.repairIfBroken()
+	horse_mc.repairIfBroken()
+	initDeviceValues()
+	battery_mc.voltage = 1
+	basicCircuit_mc.calculateSimulation()
+}
+
+
+
+function initDeviceValues() {
+	bulb_mc.resistance = 1 + int(Math.random() * 4)
+	horse_mc.resistance = 1 + int(Math.random() * 4)
+	robot_mc.resistance = 1 + int(Math.random() * 4)
+	boat_mc.resistance = 1 + int(Math.random() * 4)
+
+	for (var i: Number = 0; i <= 3; i++) {
+		ratingArray[i] = int(Math.random() * 5) + 5
+		isRatingCorrectArray[i] = (Math.random() > 0.5)
+	}
+
+	bulb_mc.maxCurrent = ratingArray[0] + 0.1 + int(Math.random() * 1000) / 1000 - (isRatingCorrectArray[0] ? 0 : 2)
+	robot_mc.maxCurrent = ratingArray[1] + 0.1 + int(Math.random() * 1000) / 1000 - (isRatingCorrectArray[1] ? 0 : 2)
+	boat_mc.maxCurrent = ratingArray[2] + 0.1 + int(Math.random() * 1000) / 1000 - (isRatingCorrectArray[2] ? 0 : 2)
+	horse_mc.maxCurrent = ratingArray[3] + 0.1 + int(Math.random() * 1000) / 1000 - (isRatingCorrectArray[3] ? 0 : 2)
+
+	bulb_mc.setLegend("" + ratingArray[0] + " Amp Rating", "Arial", 16, true, 7, 5)
+	robot_mc.setLegend("" + ratingArray[1] + " Amp Rating", "Arial", 16, true, 7, 5)
+	boat_mc.setLegend("" + ratingArray[2] + " Amp Rating", "Arial", 16, true, 7, 5)
+	horse_mc.setLegend("" + ratingArray[3] + " Amp Rating", "Arial", 16, true, 7, 5)
+}
+
+
+
+
+
+OK_btn.onPress = function () {
+
+	if (isRatingCorrectArray[0] == bulb_chb.selected) {
+		correctBulb_mc._visible = true
+		wrongBulb_mc._visible = false
+		correctQtns++
+		totalQtns++
+	}
+	else {
+		correctBulb_mc._visible = false
+		wrongBulb_mc._visible = true
+		totalQtns++
+	}
+
+
+	if (isRatingCorrectArray[1] == robot_chb.selected) {
+		correctRobot_mc._visible = true
+		wrongRobot_mc._visible = false
+		correctQtns++
+		totalQtns++
+	}
+	else {
+		correctRobot_mc._visible = false
+		wrongRobot_mc._visible = true
+		totalQtns++
+	}
+
+
+	if (isRatingCorrectArray[2] == boat_chb.selected) {
+		correctBoat_mc._visible = true
+		wrongBoat_mc._visible = false
+		correctQtns++
+		totalQtns++
+	}
+	else {
+		correctBoat_mc._visible = false
+		wrongBoat_mc._visible = true
+		totalQtns++
+	}
+
+
+	if (isRatingCorrectArray[3] == horse_chb.selected) {
+		correctHorse_mc._visible = true
+		wrongHorse_mc._visible = false
+		correctQtns++
+		totalQtns++
+	}
+	else {
+		correctHorse_mc._visible = false
+		wrongHorse_mc._visible = true
+		totalQtns++
+	}
+	curQtnNo++
+	score_txt.text = "" + correctQtns + "/" + totalQtns
+	this._visible = false
+	next_btn._visible = true
+}
+
+
+next_btn.onPress = function () {
+	newQuestion()
+}
+
+
+restart_btn.onPress = function () {
+	resetExperiment()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

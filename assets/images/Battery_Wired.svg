@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 118.02 58.98">
+    <defs>
+        <style>.cls-1,.cls-2{fill:none;stroke-width:2px;}.cls-1,.cls-2,.cls-4{stroke-miterlimit:10;}.cls-1{stroke:url(#linear-gradient);}.cls-2{stroke:url(#linear-gradient-3);}.cls-3{fill:#ed8351;}.cls-4{fill:#a22d0d;stroke:#000;stroke-width:0.5px;}.cls-5{fill:#3e3a3b;}.cls-6{fill:#fff;opacity:0.34;}</style>
+        <linearGradient id="linear-gradient" y1="38.8" x2="21.28" y2="38.8" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#a25225"/>
+            <stop offset="1" stop-color="#bb6828"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-3" x1="96.74" y1="38.8" x2="118.02" y2="38.8" xlink:href="#linear-gradient"/>
+    </defs>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="portrait">
+            <g id="Page-02">
+                <g id="Drop">
+                    <polyline class="cls-1" points="1 58.98 1 19.62 21.28 19.62"/>
+                    <polyline class="cls-1" points="1 58.98 1 19.62 21.28 19.62"/>
+                    <polyline class="cls-2" points="117.03 58.98 117.03 19.62 96.74 19.62"/>
+                    <polyline class="cls-2" points="117.03 58.98 117.03 19.62 96.74 19.62"/>
+                    <rect class="cls-3" x="100.61" y="7.84" width="3.37" height="23.56"/>
+                    <rect class="cls-4" x="13.72" y="1.81" width="87.33" height="35.62"/>
+                    <rect class="cls-5" x="12.62" width="5.56" height="39.24"/>
+                    <rect class="cls-5" x="98.71" width="2.78" height="39.24"/>
+                    <rect class="cls-6" x="22.95" y="32.04" width="70.47" height="1.31"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

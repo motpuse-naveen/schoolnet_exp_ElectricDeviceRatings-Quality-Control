@@ -49,9 +49,9 @@ var ScreenSplitter = (function () {
                 }
             }
             //NM: Specific to SpringOscillation.
-            var sprcontht = $(".content-container.mc").height();
+            //var sprcontht = $(".content-container.mc").height();
             //$(".spingContainer").css({"height":sprcontht + "px"})
-            $(".content-container.mc").css({"height":sprcontht + "px"})
+            //$(".content-container.mc").css({"height":sprcontht + "px"})
         },
         HorizontalSplit: function (p_sizes) {
             var loc_sizes = [48, 52]

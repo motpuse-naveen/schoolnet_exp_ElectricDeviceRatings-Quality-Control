@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 56.53 43.45">
+    <defs>
+        <style>.cls-1{font-size:12.8px;font-family:Montserrat-Bold, Montserrat;font-weight:700;}.cls-1,.cls-5{fill:#fff;}.cls-2{fill:#cc5019;}.cls-2,.cls-4{stroke:#757575;}.cls-2,.cls-3,.cls-4{stroke-miterlimit:10;stroke-width:0.8px;}.cls-3{fill:#275b63;stroke:#000;}.cls-4{fill:none;}.cls-5{opacity:0.12;}.cls-6{fill:url(#linear-gradient);}.cls-7{fill:#161616;}.cls-8{fill:#ffcc2c;}.cls-9{fill:#fda503;}.cls-10{fill:#efebe1;}</style>
+        <linearGradient id="linear-gradient" x1="25.04" y1="21.69" x2="31" y2="29.08" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#a6162c"/>
+            <stop offset="1" stop-color="#1a1a1a"/>
+        </linearGradient>
+    </defs>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1">
+            <text class="cls-1" transform="translate(18.07 16.53)">0 A</text>
+            <path class="cls-2" d="M53.12,6.12a3.93,3.93,0,0,0-3.27-3.87C28.19-1.88,6.64,2.19,6.64,2.19h.69A3.93,3.93,0,0,0,3.41,6.12l-3,22.4a3.93,3.93,0,0,0,3.93,3.93h5.3l1.62,8c0,.88,1,1.61,2.24,1.76a135.1,135.1,0,0,0,29.58,0H42.6c1.48,0,2.68-.8,2.68-1.78l1.62-8h5.3a3.93,3.93,0,0,0,3.93-3.93Z"/>
+            <path class="cls-3" d="M51.28,20,28.36,25.67,5.26,19.91,6.92,7.57A3.37,3.37,0,0,1,10.28,4.2H9.69S28.2.7,46.81,4.25a3.38,3.38,0,0,1,2.81,3.32Z"/>
+            <line class="cls-4" x1="51.28" y1="19.95" x2="51.37" y2="19.91"/>
+            <path class="cls-5" d="M46.24,21.22,28.35,25.69,10.29,21.18a18.53,18.53,0,0,1,36,0Z"/>
+            <path class="cls-5" d="M28.54,7.17V25.68l-18-4.49a18.54,18.54,0,0,1,18-14Z"/>
+            <circle class="cls-6" cx="28.27" cy="25.69" r="4.11"/>
+            <circle class="cls-7" cx="30.94" cy="33.88" r="1.48"/>
+            <circle class="cls-7" cx="35.2" cy="33.88" r="1.48"/>
+            <circle class="cls-7" cx="39.46" cy="33.88" r="1.48"/>
+            <polygon class="cls-8" points="16.92 29.48 14.23 34.93 15.97 35.17 15.2 36.83 14.63 36.41 14.4 38.28 17.97 34.23 16.37 33.82 18.44 30.01 16.92 29.48"/>
+            <polygon class="cls-9" points="18.44 30.01 16.37 33.82 17.97 34.23 14.4 38.28 16.68 37.41 15.9 37.14 20.81 33.58 18.01 32.98 20.34 30.68 18.44 30.01"/>
+            <circle class="cls-10" cx="30.77" cy="33.73" r="1.48"/>
+            <circle class="cls-10" cx="35.03" cy="33.73" r="1.48"/>
+            <circle class="cls-10" cx="39.29" cy="33.73" r="1.48"/>
+        </g>
+    </g>
+</svg>

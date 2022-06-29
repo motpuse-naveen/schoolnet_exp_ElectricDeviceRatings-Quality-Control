@@ -1,0 +1,234 @@
+.ball1,.ball2{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #70ee70;
+    opacity: 0.6;
+    z-index: 100;
+    position: absolute;
+    -webkit-box-shadow: 0px 0px 20px 1px rgba(0,128,0,1);
+    -moz-box-shadow: 0px 0px 20px 1px rgba(0,128,0,1);
+    box-shadow: 0px 0px 20px 1px rgba(0,128,0,1);
+    display: none;
+}
+.dropped-wire .ball1, .dropped-wire .ball2{
+    top: 6px;
+}
+
+/*anim right to left*/
+.dropped-wire[anim='rl'].complete .ball1{
+    display: block;
+    right: 10%;
+    animation: movementhrlball1 3s linear infinite;
+    -webkit-animation: movementhrlball1 3s linear infinite;
+}
+.dropped-wire[anim='rl'].complete .ball2{
+    display: block;
+    right: 50%;
+    animation: movementhrlball2 3s linear infinite;
+    -webkit-animation: movementhrlball2 3s linear infinite;
+}
+
+@keyframes movementhrlball1 {
+    100% {
+        right:40%;
+    }
+}
+@-webkit-keyframes movementhrlball1 {
+    100% {
+        right:40%;
+    }
+}
+@keyframes movementhrlball2 {
+    100% {
+        right:80%;
+    }
+}
+@-webkit-keyframes movementhrlball2 {
+    100% {
+        right:80%;
+    }
+}
+/*end anim right to left*/
+/*anim left to right*/
+.dropped-wire[anim='lr'].complete .ball1{
+    display: block;
+    left: 10%;
+    animation: movementhlrball1 3s linear infinite;
+    -webkit-animation: movementhlrball1 3s linear infinite;
+}
+.dropped-wire[anim='lr'].complete .ball2{
+    display: block;
+    left: 50%;
+    animation: movementhlrball2 3s linear infinite;
+    -webkit-animation: movementhlrball2 3s linear infinite;
+}
+
+@keyframes movementhlrball1 {
+    100% {
+        left:40%;
+    }
+}
+@-webkit-keyframes movementhlrball1 {
+    100% {
+        left:40%;
+    }
+}
+@keyframes movementhlrball2 {
+    100% {
+        left:80%;
+    }
+}
+@-webkit-keyframes movementhlrball2 {
+    100% {
+        left:80%;
+    }
+}
+/*end anim left to right*/
+
+.dropwire.ver .ball1,.dropwire.ver .ball2{
+    left:6px;
+}
+/*anim bottom to top*/
+.dropwire[anim='bt'].ver.complete .ball1{
+    display: block;
+    bottom: 10%;
+    animation: movementvbtball1 3s linear infinite;
+    -webkit-animation: movementvbtball1 3s linear infinite;
+}
+.dropwire[anim='bt'].ver.complete .ball2{
+    display: block;
+    bottom: 50%;
+    animation: movementvbtball2 3s linear infinite;
+    -webkit-animation: movementvbtball2 3s linear infinite;
+}
+@keyframes movementvbtball1 {
+    100% {
+        bottom:40%;
+    }
+}
+@-webkit-keyframes movementvbtball1 {
+    100% {
+        bottom:40%;
+    }
+}
+@keyframes movementvbtball2 {
+    100% {
+        bottom:80%;
+    }
+}
+@-webkit-keyframes movementvbtball2 {
+    100% {
+        bottom:80%;
+    }
+}
+/*end anim bottom to top*/
+/*anim top to bottom*/
+.dropwire[anim='tb'].ver.complete .ball1{
+    display: block;
+    top: 10%;
+    animation: movementvtbball1 3s linear infinite;
+    -webkit-animation: movementvtbball1 3s linear infinite;
+}
+.dropwire[anim='tb'].ver.complete .ball2{
+    display: block;
+    top: 50%;
+    animation: movementvtbball2 3s linear infinite;
+    -webkit-animation: movementvtbball2 3s linear infinite;
+}
+@keyframes movementvtbball1 {
+    100% {
+        top:40%;
+    }
+}
+@-webkit-keyframes movementvtbball1 {
+    100% {
+        top:40%;
+    }
+}
+@keyframes movementvtbball2 {
+    100% {
+        top:80%;
+    }
+}
+@-webkit-keyframes movementvtbball2 {
+    100% {
+        top:80%;
+    }
+}
+/*end anim top to bottom*/
+
+.dropped-object .ball1, .dropped-object .ball2{
+    bottom: 1px;
+}
+
+/*anim right to left*/
+.dropped-object[anim='rl'].complete .ball1{
+    display: block;
+    right: 10%;
+    animation: movementhrlball1 3s linear infinite;
+    -webkit-animation: movementhrlball1 3s linear infinite;
+}
+.dropped-object[anim='rl'].complete .ball2{
+    display: block;
+    right: 50%;
+    animation: movementhrlball2 3s linear infinite;
+    -webkit-animation: movementhrlball2 3s linear infinite;
+}
+
+@keyframes movementhrlball1 {
+    100% {
+        right:40%;
+    }
+}
+@-webkit-keyframes movementhrlball1 {
+    100% {
+        right:40%;
+    }
+}
+@keyframes movementhrlball2 {
+    100% {
+        right:80%;
+    }
+}
+@-webkit-keyframes movementhrlball2 {
+    100% {
+        right:80%;
+    }
+}
+/*end anim right to left*/
+/*anim left to right*/
+.dropped-object[anim='lr'].complete .ball1{
+    display: block;
+    left: 10%;
+    animation: movementhlrball1 3s linear infinite;
+    -webkit-animation: movementhlrball1 3s linear infinite;
+}
+.dropped-object[anim='lr'].complete .ball2{
+    display: block;
+    left: 50%;
+    animation: movementhlrball2 3s linear infinite;
+    -webkit-animation: movementhlrball2 3s linear infinite;
+}
+
+@keyframes movementhlrball1 {
+    100% {
+        left:40%;
+    }
+}
+@-webkit-keyframes movementhlrball1 {
+    100% {
+        left:40%;
+    }
+}
+@keyframes movementhlrball2 {
+    100% {
+        left:80%;
+    }
+}
+@-webkit-keyframes movementhlrball2 {
+    100% {
+        left:80%;
+    }
+}
+/*end anim left to right*/
