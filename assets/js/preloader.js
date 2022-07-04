@@ -52,6 +52,8 @@ function generatePreloader() {
   $("body").append(preloaderhtml);
 }
 
+var animCount = 46 + 61 + 61 + 61 + 31 + 131 + 81 + 91;
+
 function preloadImages() {
   imagePreCount = 0;
   for (var pId = 0; pId < imgPreloadArray.length; pId++) {
@@ -59,15 +61,57 @@ function preloadImages() {
     img.onload = imagePreloaded;
     img.src = imgPreloadArray[pId];
   }
+  for (var v1 = 0; v1 < 46; v1++) {
+    var img = new Image();
+    img.onload = imagePreloaded;
+    img.src = "assets/images/boat/broken/" + v1 + ".png";
+  }
+  for (var v2 = 0; v2 < 61; v2++) {
+    var img = new Image();
+    img.onload = imagePreloaded;
+    img.src = "assets/images/boat/moving/" + v2 + ".png";
+  }
+  for (var v3 = 0; v3 < 61; v3++) {
+    var img = new Image();
+    img.onload = imagePreloaded;
+    img.src = "assets/images/bulb/broken/" + v3 + ".png";
+  }
+  for (var v4 = 0; v4 < 61; v4++) {
+    var img = new Image();
+    img.onload = imagePreloaded;
+    img.src = "assets/images/bulb/glow/" + v4 + ".png";
+  }
+  for (var v5 = 0; v5 < 31; v5++) {
+    var img = new Image();
+    img.onload = imagePreloaded;
+    img.src = "assets/images/horse/broken/" + v5 + ".png";
+  }
+  for (var v6 = 0; v6 < 131; v6++) {
+    var img = new Image();
+    img.onload = imagePreloaded;
+    img.src = "assets/images/horse/moving/" + v6 + ".png";
+  }
+  for (var v7 = 0; v7 < 81; v7++) {
+    var img = new Image();
+    img.onload = imagePreloaded;
+    img.src = "assets/images/robot/broken/" + v7 + ".png";
+  }
+  for (var v8 = 0; v8 < 91; v8++) {
+    var img = new Image();
+    img.onload = imagePreloaded;
+    img.src = "assets/images/robot/moving/" + v8 + ".png";
+  }
 }
+
+
 
 function imagePreloaded() {
   imagePreCount++;
   var percentageload = Number(
-    ((imagePreCount / imgPreloadArray.length) * 100).toFixed(0)
+    ((imagePreCount / (imgPreloadArray.length +  animCount)) * 100).toFixed(0)
   );
   $(".preloader .progress-text").text("Loading..." + percentageload + "%");
-  if (imagePreCount == imgPreloadArray.length) {
+  if (imagePreCount == (imgPreloadArray.length + animCount)) {
     setTimeout(function () {
       $(".preloader").remove();
       $(".container-so.launch").show();

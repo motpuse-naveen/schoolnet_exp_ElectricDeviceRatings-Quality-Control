@@ -145,8 +145,8 @@
 .dropwire[anim='tb'].ver.complete .ball1 {
     display: block;
     top: 10%;
-    animation: movementvtbball1 3s ease-in-out infinite;
-    -webkit-animation: movementvtbball1 3s ease-in-out infinite;
+    animation: movementvtbball1 2s ease-in-out infinite;
+    -webkit-animation: movementvtbball1 2s ease-in-out infinite;
 }
 
 .dropwire[anim='tb'].ver.complete .ball2 {

@@ -5,6 +5,13 @@
 
 .circuit-wrap {
   padding-top: 50px;
+  overflow: auto;
+}
+
+.circuit-container {
+  position: relative;
+  width: 620px;
+  margin: 0 auto;
 }
 
 .circuit-diagram {
@@ -210,7 +217,7 @@
   width: 85px;
   text-align: center;
   font-size: 14px;
-  line-height: 18px;
+  line-height: 15px;
 }
 
 .dt1 {
@@ -527,33 +534,39 @@
   height: 18px;
   margin-bottom: 2px;
 }
-.dragObject .connector{
+
+.dragObject .connector {
   position: absolute;
   left: 0;
   top: 0;
   display: block;
 }
-.dragObject[object='bulb'] img.objimg{
+
+.dragObject[object='bulb'] img.objimg {
   width: 67px;
   margin-top: -18px;
   margin-left: 9px;
 }
-.dragObject[object='robot'] img.objimg{
+
+.dragObject[object='robot'] img.objimg {
   width: 80px;
-    margin-top: -19px;
-    margin-left: 2px;
+  margin-top: -19px;
+  margin-left: 2px;
 }
-.dragObject[object='boat'] img.objimg{
+
+.dragObject[object='boat'] img.objimg {
   width: 88px;
   margin-top: -4px;
   margin-left: -1px;
 }
-.dragObject[object='horse'] img.objimg{
+
+.dragObject[object='horse'] img.objimg {
   width: 67px;
   margin-top: 0px;
   margin-left: 9px;
 }
-.dropped-object .connector{
+
+.dropped-object .connector {
   display: none;
 }
 
@@ -565,8 +578,8 @@
 
 .dropped-object[object='robot'].complete img, .dropped-object[object='robot'] img.objimg {
   width: 112px;
-    margin-top: -26px;
-    margin-left: -12px;
+  margin-top: -26px;
+  margin-left: -12px;
 }
 
 .dropped-object[object='boat'].complete img, .dropped-object[object='boat'] img.objimg {
@@ -579,4 +592,294 @@
   width: 98px;
   margin-top: -3px;
   margin-left: -4px;
+}
+
+@media screen and (orientation: landscape) and (min-device-width: 380px)and (max-device-width: 990px) and (max-device-height: 990px) {
+  .wrapper[device="mobile"] .dropwire.hor {
+    width: 90px;
+    height: 16px;
+  }
+
+  .wrapper[device="mobile"] .dropwire.ver {
+    width: 16px;
+    height: 90px;
+  }
+
+  .wrapper[device="mobile"] .dropped-wire {
+    width: 90px;
+    height: 16px;
+  }
+
+  .wrapper[device="mobile"] .h-wire-img {
+    height: 16px;
+    width: 58px;
+    left: 16px;
+  }
+
+  .wrapper[device="mobile"] .v-wire-img {
+    height: 65px;
+    width: 16px;
+    top: 12px;
+  }
+
+  .wrapper[device="mobile"] .dropwire .endpoint {
+    width: 16px;
+    height: 16px;
+  }
+
+  .wrapper[device="mobile"] .dropwire .endpoint.left {
+    top: -8px;
+  }
+
+  .wrapper[device="mobile"] .dropwire .endpoint .inncir {
+    width: 8px;
+    height: 8px;
+    top: 4px;
+    left: 4px;
+  }
+
+  .wrapper[device="mobile"] .dropwire .endpoint.right {
+    right: 0px;
+    top: -8px;
+  }
+
+  .wrapper[device="mobile"] .t1 {
+    top: 0px;
+  }
+
+  .wrapper[device="mobile"] .t2 {
+    top: 74px;
+  }
+
+  .wrapper[device="mobile"] .t3 {
+    top: 148px;
+  }
+
+  .wrapper[device="mobile"] .l1 {
+    left: 0px;
+  }
+
+  .wrapper[device="mobile"] .l2 {
+    left: 74px;
+  }
+
+  .wrapper[device="mobile"] .l3 {
+    left: 148px;
+  }
+
+  .wrapper[device="mobile"] .l4 {
+    left: 222px;
+  }
+
+  .wrapper[device="mobile"] .l5 {
+    left: 296px;
+  }
+
+  .wrapper[device="mobile"] .l6 {
+    left: 370px;
+  }
+
+  .wrapper[device="mobile"] .circuit-wrap {
+    padding-top: 30px;
+  }
+
+  .wrapper[device="mobile"] .ball1, .wrapper[device="mobile"] .ball2 {
+    width: 6px;
+    height: 6px;
+  }
+
+  .wrapper[device="mobile"] .dropwire.ver .ball1, .wrapper[device="mobile"] .dropwire.ver .ball2 {
+    left: 5px;
+  }
+
+  .wrapper[device="mobile"] .dropped-wire .ball1, .wrapper[device="mobile"] .dropped-wire .ball2 {
+    top: 5px;
+  }
+
+  .wrapper[device="mobile"] .circuit-diagram {
+    width: 602px;
+    height: 220px;
+  }
+
+  .wrapper[device="mobile"] .dragObject, .wrapper[device="mobile"] .dragObjectClone {
+    width: 62px;
+  }
+
+  .wrapper[device="mobile"] .battery-img {
+    bottom: -5px;
+    left: 5px;
+    width: 80px;
+  }
+
+  .wrapper[device="mobile"] .dragSeperator {
+    height: 55px;
+  }
+
+  .wrapper[device="mobile"] .dragSeperator.dt1.s1 {
+    left: 483px;
+    top: 5px;
+  }
+
+  .wrapper[device="mobile"] .dragSeperator.dt1.s2 {
+    left: 483px;
+    top: 64px;
+  }
+
+  .wrapper[device="mobile"] .dragSeperator.dt1.s3 {
+    left: 483px;
+    top: 124px;
+    height: 40px;
+  }
+  .wrapper[device="mobile"] .dragSeperator.dt1.s4{
+    display: none;
+  }
+  .wrapper[device="mobile"] .dragSeperator.dt1.s5{
+    display: none;
+  }
+
+  .wrapper[device="mobile"] .dragObject[object='bulb'] img.objimg {
+    width: 50px;
+    margin-top: -14px;
+    margin-left: 6px;
+  }
+
+  .wrapper[device="mobile"] .dragObject[object='robot'] img.objimg {
+    width: 57px;
+    margin-top: -13px;
+    margin-left: 2px;
+  }
+
+  .wrapper[device="mobile"] .dragObject[object='boat'] img.objimg {
+    width: 65px;
+    margin-top: -3px;
+    margin-left: -1px;
+  }
+
+  .wrapper[device="mobile"] .dragObject[object='horse'] img.objimg {
+    width: 50px;
+    margin-top: 0px;
+    margin-left: 6px;
+  }
+
+  .wrapper[device="mobile"] .dragText {
+    width: 100%;
+    font-size: 10px;
+    line-height: 12px;
+    margin-left: -5px;
+  }
+
+  .wrapper[device="mobile"] .dl1[object="bulb"] {
+    left: 410px;
+  }
+
+  .wrapper[device="mobile"] .dt1[object="bulb"] {
+    top: 0px;
+  }
+
+  .wrapper[device="mobile"] .dl2[object="robot"] {
+    left: 495px;
+  }
+
+  .wrapper[device="mobile"] .dt1[object="robot"] {
+    top: 0px;
+  }
+
+  .wrapper[device="mobile"] .dl3[object="boat"] {
+    left: 410px;
+  }
+
+  .wrapper[device="mobile"] .dt1[object="boat"] {
+    top: 64px;
+  }
+
+  .wrapper[device="mobile"] .dl4[object="horse"] {
+    left: 495px;
+  }
+
+  .wrapper[device="mobile"] .dt1[object="horse"] {
+    top: 64px;
+  }
+
+  .wrapper[device="mobile"] .dl5[object="ammeter"] {
+    left: 410px;
+  }
+
+  .wrapper[device="mobile"] .dt1[object="ammeter"] {
+    top: 128px;
+  }
+
+  .wrapper[device="mobile"] .dl6[object="wire"] {
+    left: 495px;
+  }
+
+  .wrapper[device="mobile"] .dt2[object="wire"] {
+    top: 128px;
+  }
+
+  .wrapper[device="mobile"] .buttonMinus {
+    left: 10px;
+    top: 15px;
+  }
+
+  .wrapper[device="mobile"] .buttonPlus {
+    right: 10px;
+    top: 15px;
+  }
+
+  .wrapper[device="mobile"] .volt-wrap {
+    width: 56px;
+    left: 16px;
+    top: -35px;
+    color: #FFF;
+  }
+
+  .wrapper[device="mobile"] .volt-wrap .value {
+    text-align: center;
+    font-size: 10px;
+    padding: 5px 0px;
+  }
+  .wrapper[device="mobile"] .ques-panel{
+    font-size: 13px;
+  }
+  .wrapper[device="mobile"] .score_cont .score_txt{
+    padding: 1px 10px 1px 0px;
+  }
+  .wrapper[device="mobile"] .score_cont .score_title{
+    height: 22px;
+  }
+  .wrapper[device="mobile"] .score_cont{
+    height: 26px;
+  }
+  .wrapper[device="mobile"] .score-pan{
+    top: -26px;
+  }
+
+  .wrapper[device="mobile"] .dropped-object {
+    width: 60px;
+  }
+ 
+  .wrapper[device="mobile"] .dropped-object[object='bulb'].complete img, 
+  .wrapper[device="mobile"] .dropped-object[object='bulb'] img.objimg{
+    width: 64px;
+    margin-top: -1px;
+    margin-left: -7px;
+  }
+  .wrapper[device="mobile"] .dropped-object[object='robot'].complete img, 
+  .wrapper[device="mobile"] .dropped-object[object='robot'] img.objimg{
+    width: 70px;
+    margin-top: 2px;
+    margin-left: -10px;
+  }
+  .wrapper[device="mobile"] .dropped-object[object='boat'].complete img, 
+  .wrapper[device="mobile"] .dropped-object[object='boat'] img.objimg{
+    width: 82px;
+    margin-top: 13px;
+    margin-left: -16px;
+  }
+  .wrapper[device="mobile"] .dropped-object[object='horse'].complete img, 
+  .wrapper[device="mobile"] .dropped-object[object='horse'] img.objimg{
+    width: 62px;
+    margin-top: 17px;
+    margin-left: -6px;
+  }
 }
