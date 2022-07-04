@@ -15,20 +15,8 @@ var imgPreloadArray = new Array(
   "assets/images/watermark-2.png",
   "assets/images/volt-increase.svg",
   "assets/images/volt-decrease.svg",
-  "assets/images/drag_bulb.svg",
-  "assets/images/drag_robot.svg",
-  "assets/images/drag_boat.svg",
-  "assets/images/drag_horse.svg",
+  "assets/images/connectors.svg",
   "assets/images/drag_ameter.svg",
-  "assets/images/bulb-01.svg",
-  "assets/images/bulb-02.svg",
-  "assets/images/bulb-03.svg",
-  "assets/images/robot-01.svg",
-  "assets/images/robot-02.svg",
-  "assets/images/boat-01.svg",
-  "assets/images/boat-02.svg",
-  "assets/images/horse-01.svg",
-  "assets/images/horse-02.svg",
   "assets/images/ameter-01.svg",
   "assets/images/ameter-02.svg",
   "assets/images/wire-01.svg",
@@ -72,6 +60,7 @@ function preloadImages() {
     img.src = imgPreloadArray[pId];
   }
 }
+
 function imagePreloaded() {
   imagePreCount++;
   var percentageload = Number(
