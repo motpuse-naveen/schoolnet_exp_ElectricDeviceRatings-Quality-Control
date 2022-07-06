@@ -47,36 +47,38 @@ var ActivityShell = (function () {
           $(".preloader").remove();
           ActivityShell.AdjustContainerHeight();
           ActivityMain.LaunchActivity();
-          /*
+          
           if (zoom1 == null) {
             hammerItScrollableContent(document.querySelector(".zoom1"));
             zoom1 = "zoom1";
           }
+          /*
           if (zoom2 == null) {
             hammerItScrollableContent(document.querySelector(".zoom2"));
             zoom2 = "zoom2";
           }
           */
           setTimeout(function () {
-            //GuidedTour.Init();
+            GuidedTour.Init();
           }, 500);
         }, 1000)
       }
       else {
         this.AdjustContainerHeight();
         ActivityMain.LaunchActivity();
-        /*
+        
         if (zoom1 == null) {
           hammerItScrollableContent(document.querySelector(".zoom1"));
           zoom1 = "zoom1";
         }
+        /*
         if (zoom2 == null) {
           hammerItScrollableContent(document.querySelector(".zoom2"));
           zoom2 = "zoom2";
         }
         */
         setTimeout(function () {
-          //GuidedTour.Init();
+          GuidedTour.Init();
         }, 500);
       }
     },

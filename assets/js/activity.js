@@ -122,23 +122,25 @@ var ActivityMain = (function () {
       $(".wrong-mark").remove();
       this.ResetActivity();
       this.InitDeviceValues();
+      $(".volt-wrap .voltage").html(_voltage)
+      $("input[type='checkbox'][name='device']").prop('checked', false);
     },
     InitDeviceValues: function () {
       $(".dragObjectClone[object='wire']").attr("resistance", 0.0001);
       $(".dragObject[object='ammeter']").attr("resistance", 0);
-      _deviceDetails.bulb.resistance = 1 + Number(Math.random() * 4);
-      _deviceDetails.robot.resistance = 1 + Number(Math.random() * 4);
-      _deviceDetails.boat.resistance = 1 + Number(Math.random() * 4);
-      _deviceDetails.horse.resistance = 1 + Number(Math.random() * 4);
+      _deviceDetails.bulb.resistance = 1 + Math.floor(Number(Math.random() * 4));
+      _deviceDetails.robot.resistance = 1 + Math.floor(Number(Math.random() * 4));
+      _deviceDetails.boat.resistance = 1 + Math.floor(Number(Math.random() * 4));
+      _deviceDetails.horse.resistance = 1 + Math.floor(Number(Math.random() * 4));
 
       for (var i = 0; i <= 3; i++) {
-        ratingArray[i] = (Number(Math.random() * 5) + 5)
+        ratingArray[i] = Math.floor(Number((Math.random() * 5) + 5))
         isRatingCorrectArray[i] = (Math.random() > 0.5)
       }
-      _deviceDetails.bulb.max_current = ratingArray[0] + 0.1 + Number(Math.random() * 1000) / 1000 - (isRatingCorrectArray[0] ? 0 : 2);
-      _deviceDetails.robot.max_current = ratingArray[1] + 0.1 + Number(Math.random() * 1000) / 1000 - (isRatingCorrectArray[1] ? 0 : 2);
-      _deviceDetails.boat.max_current = ratingArray[2] + 0.1 + Number(Math.random() * 1000) / 1000 - (isRatingCorrectArray[2] ? 0 : 2);
-      _deviceDetails.horse.max_current = ratingArray[3] + 0.1 + Number(Math.random() * 1000) / 1000 - (isRatingCorrectArray[3] ? 0 : 2);
+      _deviceDetails.bulb.max_current = Number(ratingArray[0] + 0.1 + Math.floor(Number(Math.random() * 1000)) / 1000 - (isRatingCorrectArray[0] ? 0 : 2)).toFixed(2);
+      _deviceDetails.robot.max_current = Number(ratingArray[1] + 0.1 + Math.floor(Number(Math.random() * 1000)) / 1000 - (isRatingCorrectArray[1] ? 0 : 2)).toFixed(2);
+      _deviceDetails.boat.max_current = Number(ratingArray[2] + 0.1 + Math.floor(Number(Math.random() * 1000)) / 1000 - (isRatingCorrectArray[2] ? 0 : 2)).toFixed(2);
+      _deviceDetails.horse.max_current = Number(ratingArray[3] + 0.1 + Math.floor(Number(Math.random() * 1000)) / 1000 - (isRatingCorrectArray[3] ? 0 : 2)).toFixed(2);
 
       _deviceDetails.bulb.ratings = ratingArray[0];
       _deviceDetails.robot.ratings = ratingArray[1];
@@ -165,10 +167,10 @@ var ActivityMain = (function () {
       $(".dragObject[object='boat']").attr("ratings", _deviceDetails.boat.ratings)
       $(".dragObject[object='horse']").attr("ratings", _deviceDetails.horse.ratings)
 
-      $(".dragObject[object='bulb'] .dragText").text(_deviceDetails.bulb.ratings.toFixed(0) + " Amp Rating")
-      $(".dragObject[object='robot'] .dragText").text(_deviceDetails.robot.ratings.toFixed(0) + " Amp Rating")
-      $(".dragObject[object='boat'] .dragText").text(_deviceDetails.boat.ratings.toFixed(0) + " Amp Rating")
-      $(".dragObject[object='horse'] .dragText").text(_deviceDetails.horse.ratings.toFixed(0) + " Amp Rating")
+      $(".dragObject[object='bulb'] .dragText").text(_deviceDetails.bulb.ratings + " Amp Rating")
+      $(".dragObject[object='robot'] .dragText").text(_deviceDetails.robot.ratings + " Amp Rating")
+      $(".dragObject[object='boat'] .dragText").text(_deviceDetails.boat.ratings + " Amp Rating")
+      $(".dragObject[object='horse'] .dragText").text(_deviceDetails.horse.ratings + " Amp Rating")
     },
     OnOrientationChange: function () {
 

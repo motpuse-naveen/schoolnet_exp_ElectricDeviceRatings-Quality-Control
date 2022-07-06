@@ -1,6 +1,6 @@
 
 var _bulbBrokenInterval = 0;
-var _bulbGlowSlides = 60;
+var _bulbGlowSlides = 30;
 var _bulbBrokenSlides = 60;
 var _bulbBrokenSlidesNo = 0;
 //var _bulbGlowInterval = 0;

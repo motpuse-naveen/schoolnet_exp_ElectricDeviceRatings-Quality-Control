@@ -52,7 +52,7 @@ function generatePreloader() {
   $("body").append(preloaderhtml);
 }
 
-var animCount = 46 + 61 + 61 + 61 + 31 + 131 + 81 + 91;
+var animCount = 46 + 61 + 31 + 61 + 31 + 131 + 81 + 91;
 
 function preloadImages() {
   imagePreCount = 0;

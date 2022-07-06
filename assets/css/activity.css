@@ -4,7 +4,7 @@
 }
 
 .circuit-wrap {
-  padding-top: 50px;
+  padding-top: 60px;
   overflow: auto;
 }
 
@@ -17,7 +17,7 @@
 .circuit-diagram {
   position: relative;
   width: 572px;
-  height: 400px;
+  height: 390px;
   margin: 0 auto;
 }
 
@@ -168,7 +168,7 @@
 .buttonMinus {
   position: absolute;
   left: 28px;
-  top: 20px;
+  top: 15px;
   width: 25px;
   height: 25px;
   border: none;
@@ -179,7 +179,7 @@
 .buttonPlus {
   position: absolute;
   right: 26px;
-  top: 20px;
+  top: 15px;
   width: 25px;
   height: 25px;
   border: none;
@@ -221,7 +221,7 @@
 }
 
 .dt1 {
-  top: 285px;
+  top: 280px;
 }
 
 .dt2 {
@@ -293,10 +293,19 @@
 }
 
 .ques-panel {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem 0.2rem 1rem;
   border-top: 1px solid var(--primary-text);
-  position: relative;
+  position: absolute;
   font-size: 15px;
+  bottom: 0px;
+  width: 100%;
+}
+.wrapper[device="tablet"] .ques-panel {
+  padding-bottom: 2rem;
+}
+
+.wrapper[device="mobile"] .ques-panel {
+  position: relative;
 }
 
 .lp60 {
@@ -594,6 +603,13 @@
   margin-left: -4px;
 }
 
+.buttonMinus.gt-clone{
+  background-color: transparent;
+}
+.buttonPlus.gt-clone{
+  background-color: transparent;
+}
+
 @media screen and (orientation: landscape) and (min-device-width: 380px)and (max-device-width: 990px) and (max-device-height: 990px) {
   .wrapper[device="mobile"] .dropwire.hor {
     width: 90px;
@@ -680,7 +696,7 @@
   }
 
   .wrapper[device="mobile"] .circuit-wrap {
-    padding-top: 30px;
+    padding-top: 36px;
   }
 
   .wrapper[device="mobile"] .ball1, .wrapper[device="mobile"] .ball2 {
@@ -956,6 +972,10 @@
 
   .wrapper[device="mobile"] .t3 {
     top: 168px;
+  }
+  
+  .wrapper[device="mobile"] .circuit-wrap {
+    padding-top: 40px;
   }
 
   .wrapper[device="mobile"] .battery-img {

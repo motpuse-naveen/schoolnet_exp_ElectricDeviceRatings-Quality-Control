@@ -273,25 +273,32 @@
 
 /*end anim left to right*/
 
+
 @media screen and (orientation: landscape) and (min-device-width: 380px)and (max-device-width: 990px) and (max-device-height: 990px) {
-    .dropped-object .ball1, .dropped-object .ball2 {
+    .wrapper[device="mobile"] .dropped-object .ball1, 
+    .wrapper[device="mobile"] .dropped-object .ball2 {
         bottom: 1px;
     }
-    .dropped-object[object='bulb'] .ball1, .dropped-object[object='bulb'] .ball2 {
+    .wrapper[device="mobile"] .dropped-object[object='bulb'] .ball1, 
+    .wrapper[device="mobile"] .dropped-object[object='bulb'] .ball2 {
         bottom: 5px;
     }
-    .dropped-object[object='boat'] .ball1, .dropped-object[object='boat'] .ball2 {
+    .wrapper[device="mobile"] .dropped-object[object='boat'] .ball1, 
+    .wrapper[device="mobile"] .dropped-object[object='boat'] .ball2 {
         bottom: 2px;
     }
 }
 @media screen and (orientation: landscape) and (min-device-width: 800px) {
-    .dropped-object .ball1, .dropped-object .ball2 {
+    .wrapper[device="mobile"] .dropped-object .ball1, 
+    .wrapper[device="mobile"] .dropped-object .ball2 {
         bottom: 2px;
     }
-    .dropped-object[object='bulb'] .ball1, .dropped-object[object='bulb'] .ball2 {
+    .wrapper[device="mobile"] .dropped-object[object='bulb'] .ball1, 
+    .wrapper[device="mobile"] .dropped-object[object='bulb'] .ball2 {
         bottom: 6px;
     }
-    .dropped-object[object='boat'] .ball1, .dropped-object[object='boat'] .ball2 {
+    .wrapper[device="mobile"] .dropped-object[object='boat'] .ball1, 
+    .wrapper[device="mobile"] .dropped-object[object='boat'] .ball2 {
         bottom: 3px;
     }
 }

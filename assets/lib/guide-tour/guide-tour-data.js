@@ -20,6 +20,14 @@ const g_tour_steps = [
         informationText: `Next - Display next question.`,
     },
     {
+        sourceElmIdQS: ".buttonMinus",
+        informationText: `Decrease the voltage of a circuit.`,
+    },
+    {
+        sourceElmIdQS: ".buttonPlus",
+        informationText: `Increase the voltage of a circuit`,
+    },
+    {
         sourceElmIdQS: "#btn_themes",
         informationText: "Theme - Provides different user interface colour themes.",
     },
