@@ -116,7 +116,7 @@ var ActivityMain = (function () {
     NewQuestion: function () {
       $(".ques-txt .ques-no").text("Q" + curQtnNo + ":")
       $(".score_txt").text("" + correctQtns + "/" + totalQtns);
-      $("#next_btn").hide();
+      
       $("#OK_btn").show();
       $(".correct-mark").remove();
       $(".wrong-mark").remove();

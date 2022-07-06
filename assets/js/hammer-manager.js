@@ -198,8 +198,8 @@ function PZApplyScaleScrollable(p_element, p_scale, eventType) {
     });
     $(p_element).attr("pz-scale", p_scale)
 
-    if (eventType == "pinchend") {
+    /*if (eventType == "pinchend") {
         ScreenSplitter.ResetSplitOnPinchZoom();
-    }
+    }*/
 }
 
