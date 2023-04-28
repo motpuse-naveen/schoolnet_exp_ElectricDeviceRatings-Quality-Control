@@ -285,6 +285,8 @@ var ActivityMain = (function () {
           $(".dropped-object[seq='" + _path2[i] + "']").removeClass("complete");
         }
         $(".dropwire.ver").removeClass("complete");
+        $(".dropped-object[object='ammeter']").find(".ammeter-text").text(0 + " A")
+        console.log("oooooo") 
       }
     },
     GetLinearCurrent: function () {
@@ -427,18 +429,24 @@ var ActivityMain = (function () {
           else {
             //Calculate parallel resistance 
             I_Circuit_Current = this.GetParallerCurrent();
+            console.log("i_current12", I_Circuit_Current)
           }
         }
         else {
           I_Circuit_Current = this.GetLinearCurrent();
+          console.log("i_current1211", I_Circuit_Current)
+
         }
       }
+      console.log("i_current12111", I_Circuit_Current)
       return I_Circuit_Current;
+      
     },
     DisplayCurrent: function () {
       var i_current = this.CalculateCurrent();
       _current = Number(i_current.toFixed(3));
       $(".dropped-object[object='ammeter']").find(".ammeter-text").text(_current + " A")
+      console.log("i_current", i_current)
     },
     UpdateDeviceStatus: function () {
       var _data = ActivityMain.GetCircuitValues();
@@ -530,9 +538,10 @@ var ActivityMain = (function () {
     BindDraggables: function () {
       //Bind Draggable
       $(".dragObject").draggable({
-        container: ".circuit-diagram",
+        container: ".circuit-diagram",  
+        containment: ".zoom1",
         revert: function (event, ui) {
-          $(this).data("uiDraggable").originalPosition = {
+          $(this).data("uiDraggable").originalPosition  = {
             top: $(this).attr("orgTop"),
             left: $(this).attr("orgLeft")
           };
@@ -581,6 +590,7 @@ var ActivityMain = (function () {
       $(".dragObjectClone").draggable({
         container: ".circuit-diagram",
         helper: 'clone',
+        containment: ".zoom1",
         revert: function (event, ui) {
           var clone = $(".dragObjectClone.ui-draggable-handle.ui-draggable-dragging")
           clone.fadeOut(500, function () {
@@ -741,6 +751,7 @@ var ActivityMain = (function () {
             else {
               ui.helper.fadeOut(500, function () {
                 ui.helper.remove();
+                
               });
             }
           }
